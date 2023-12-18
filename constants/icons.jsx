@@ -6,8 +6,8 @@ import home from "../assets/icons/home.png"
 import playlist from "../assets/icons/playlist.png"
 import search from "../assets/icons/search-interface-symbol.png"
 import shoppingcart from "../assets/icons/shopping-cart.png"
-import speech from "../assets/icons/speech-bubble.png"
-import user from "../assets/icons/user"
+import speech from "../assets/icons/speech.png"
+import user from "../assets/icons/user.png"
 
 export default {
     addtoplaylist,
