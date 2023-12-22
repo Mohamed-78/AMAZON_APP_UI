@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity, Image, FlatList } from 'react-native'
 import styles from './deals.style'
 import { icons, images } from '../../constants'
-import CardMedia from 'react-card-media-element'
+import DealSlide from '../dealslider/DealSlide'
 
 const deals = [
     {
@@ -35,23 +35,17 @@ const Deals = () => {
             />
         </TouchableOpacity>
     </View>
-    {/* <View style={styles.cardsContainer}>
+    <View style={styles.cardsContainer}>
       <FlatList
-        data={categories}
+        data={deals}
         renderItem={({ item }) => 
-        <CardMedia 
-            image={'https://placehold.co/500x500/png'}
-            title={item.title}
-            subtitle={"subtitle"}
-            description={"Lorem ipsum dolor sit amet, consectetur adip"} 
-        />}
+        <DealSlide item={item} />}
         keyExtractor={(item) => item.id}
         contentContainerStyle={{ columnGap: 12 }}
         horizontal
         showsHorizontalScrollIndicator={false}
-        
       />
-    </View> */}
+    </View>
 </View>
   )
 }
