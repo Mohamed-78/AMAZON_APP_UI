@@ -3,15 +3,13 @@ import { COLORS } from "../../constants";
 
 const styles = StyleSheet.create({
     container:{
-        flex: 1,
-        padding: "5%",
-        paddingVertical: "10%",
+       marginTop: "10%"
     },
-    categoryHeader:{
+    dealsHeader:{
         flexDirection: "row",
         justifyContent: "space-between",
     },
-    categoryText:{
+    dealsText:{
         fontWeight: "bold",
         fontSize: 22,
         color: COLORS.bold
@@ -23,9 +21,6 @@ const styles = StyleSheet.create({
     rightIconTouchable:{
        marginTop: "2.5%"
     },
-    cardsContainer: {
-        padding: 0,
-    },
+    fontSize: 10
 })
-
 export default styles;

@@ -3,6 +3,7 @@ import { View, Text, Image, TouchableOpacity, FlatList } from 'react-native'
 import styles from './categorie.style'
 import { icons, images } from '../../constants'
 import CardSlide from '../cardslider/CardSlide'
+import Deals from '../deals/Deals'
 
 const categories = [
     {
@@ -32,16 +33,18 @@ const Categorie = () => {
             </TouchableOpacity>
         </View>
         <View style={styles.cardsContainer}>
-            <FlatList
-                data={categories}
-                renderItem={({ item }) => 
-                <CardSlide item={item} />}
-                keyExtractor={(item) => item.id}
-                contentContainerStyle={{ columnGap: 12 }}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-            />
+          <FlatList
+            data={categories}
+            renderItem={({ item }) => 
+            <CardSlide item={item} />}
+            keyExtractor={(item) => item.id}
+            contentContainerStyle={{ columnGap: 12 }}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            
+          />
         </View>
+        <Deals />
     </View>
   )
 }
