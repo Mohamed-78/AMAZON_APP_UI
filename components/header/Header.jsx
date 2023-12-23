@@ -14,7 +14,7 @@ const Header = () => {
             </View>
         </View>
         <View>
-            <SearchBar />
+          <SearchBar />
         </View>
     </View>
   )

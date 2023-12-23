@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginTop: "-8%",
         height: 50,
-        width: "90%"
+        width: "90%",
     },
     searchWrapper: {
         backgroundColor: "#ffff",

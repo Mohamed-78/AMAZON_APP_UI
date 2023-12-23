@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     },
     headerHeight:{
         height: "17%", 
-        backgroundColor: COLORS.bold
+        backgroundColor: COLORS.bold,
     },
     imageSize:{
         width: 120,

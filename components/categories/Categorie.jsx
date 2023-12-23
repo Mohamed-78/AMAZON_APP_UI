@@ -41,10 +41,8 @@ const Categorie = () => {
             contentContainerStyle={{ columnGap: 12 }}
             horizontal
             showsHorizontalScrollIndicator={false}
-            
           />
         </View>
-        <Deals />
     </View>
   )
 }
