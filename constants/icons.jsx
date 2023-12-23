@@ -8,6 +8,7 @@ import search from "../assets/icons/search-interface-symbol.png"
 import shoppingcart from "../assets/icons/shopping-cart.png"
 import speech from "../assets/icons/speech.png"
 import user from "../assets/icons/user.png"
+import rating from "../assets/icons/rating.png"
 
 export default {
     addtoplaylist,
@@ -19,5 +20,6 @@ export default {
     search,
     shoppingcart,
     speech,
-    user
+    user,
+    rating
 }

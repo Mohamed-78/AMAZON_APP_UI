@@ -1,13 +1,13 @@
 import basket from "../assets/images/basket.jpg"
-import cashmere from "../assets/images/cashmere.jpg"
+import cashmere from "../assets/images/cashmere.png"
 import costume from "../assets/images/costume.jpg"
 import double from "../assets/images/double-face-cashmere.jpg"
 import iphone from "../assets/images/iphone_12.jpg"
 import logo from "../assets/images/logo.png"
 import mac from "../assets/images/mac.jpg"
 import samsung from "../assets/images/samsung_s12.jpg"
-import smoking from "../assets/images/smoking.jpg"
-import woolean from "../assets/images/woolenJacket.jpg"
+import smoking from "../assets/images/smoking.png"
+import woolean from "../assets/images/woolenJacket.png"
 
 export default {
     basket,
