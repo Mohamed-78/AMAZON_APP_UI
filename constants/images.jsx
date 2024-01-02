@@ -8,6 +8,9 @@ import mac from "../assets/images/mac.jpg"
 import samsung from "../assets/images/samsung_s12.png"
 import smoking from "../assets/images/smoking.png"
 import woolean from "../assets/images/woolenJacket.png"
+import fashion from "../assets/images/fashion.jpg"
+import home from "../assets/images/home.jpg"
+import toys from "../assets/images/toys.jpg"
 
 export default {
     basket,
@@ -19,5 +22,8 @@ export default {
     mac,
     samsung,
     smoking,
-    woolean
+    woolean,
+    fashion,
+    home,
+    toys
 }

@@ -4,6 +4,7 @@ import styles from './categorie.style'
 import { icons, images } from '../../constants'
 import CardSlide from '../cardslider/CardSlide'
 import Deals from '../deals/Deals'
+import { useNavigation } from '@react-navigation/native';
 
 const categories = [
     {
@@ -24,11 +25,17 @@ const categories = [
   ];
 
 const Categorie = () => {
+  const navigation = useNavigation();
+
+  const handlePress = () => {
+    navigation.navigate('Categories');
+  };
+
   return (
     <View style={styles.container}>
         <View style={styles.categoryHeader}>
             <Text style={styles.categoryText}>Category</Text>
-            <TouchableOpacity style={styles.rightIconTouchable}>
+            <TouchableOpacity style={styles.rightIconTouchable} onPress={handlePress}>
                 <Image source={icons.chevron} resizeMode="cover" style={styles.chevronIcon} />
             </TouchableOpacity>
         </View>

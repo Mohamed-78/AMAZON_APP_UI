@@ -1,12 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native';
 import Layout from './app/index';
 import Home from './components/screens/home/Home';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons'; 
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Categories from './components/screens/categories/Categories';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <Layout />
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={Layout} />
+        <Stack.Screen name="Categories" component={Categories} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
