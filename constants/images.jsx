@@ -11,6 +11,7 @@ import woolean from "../assets/images/woolenJacket.png"
 import fashion from "../assets/images/fashion.jpg"
 import home from "../assets/images/home.jpg"
 import toys from "../assets/images/toys.jpg"
+import user from "../assets/images/profil.png"
 
 export default {
     basket,
@@ -25,5 +26,6 @@ export default {
     woolean,
     fashion,
     home,
-    toys
+    toys,
+    user
 }
