@@ -20,11 +20,11 @@ export default SlideItem
 const styles = StyleSheet.create({
     container:{
         width,
-        height,
+        // height,
         alignItems: "center"
     },
     image: {
         flex: 0.5,
-        width: '100%'
+        width: '80%'
     }
 })

@@ -3,7 +3,7 @@ import { COLORS } from "../../../constants";
 
 const styles = StyleSheet.create({
     container:{
-       flex: 0.5,
+       flex: 1,
     },
     flexPosition: {
         flexDirection: "row",
@@ -76,11 +76,15 @@ const styles = StyleSheet.create({
        marginTop: "2.5%"
     },
     userImage:{
-        width:70,
-        height:70,
+        marginTop: "-10%",
+        width:50,
+        height:50,
+    },
+    reviewsMargin:{
+        marginLeft:20,
+        marginBottom: 15
     },
     reviewsElement:{
-        marginLeft:20,
         flexDirection: "row",
         justifyContent: "space-between",
         alignContent: "center",
@@ -103,11 +107,15 @@ const styles = StyleSheet.create({
         marginTop: "10%"
     },
     footer:{
+        padding: "5%",
+        margin: "10%",
         flexDirection: "row",
         justifyContent: "space-between",
         alignContent: "center",
         alignItems: "center",
         alignSelf: "center",
+        position: "relative",
+        top: "10%",
         width: "100%",
         backgroundColor: "#fff",
         shadowOffset: { width: 0, height: 0 },

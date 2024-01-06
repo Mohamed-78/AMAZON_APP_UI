@@ -11,6 +11,7 @@ import user from "../assets/icons/user.png"
 import rating from "../assets/icons/rating.png"
 import searchsymbol from "../assets/icons/search.png"
 import back from "../assets/icons/back.png"
+import leftchevron from "../assets/icons/left-chevron.png"
 
 export default {
     addtoplaylist,
@@ -25,5 +26,6 @@ export default {
     user,
     rating,
     searchsymbol,
-    back
+    back,
+    leftchevron
 }
