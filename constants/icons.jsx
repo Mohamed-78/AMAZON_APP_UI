@@ -14,9 +14,19 @@ import back from "../assets/icons/back.png"
 import leftchevron from "../assets/icons/left-chevron.png"
 import success from "../assets/icons/success.png"
 import add from "../assets/icons/add.png"
+import gps from "../assets/icons/gps.png"
+import visa from "../assets/icons/visa.png"
+import creditcardgold from "../assets/icons/credit-card-gold.png"
+import contactless from "../assets/icons/contactless.png"
+import creditcard from "../assets/icons/credit-card.png"
 
 export default {
+    creditcardgold,
+    contactless,
+    creditcard,
     add,
+    gps,
+    visa,
     addtoplaylist,
     camera,
     checklist,

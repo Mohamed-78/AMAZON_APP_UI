@@ -52,6 +52,6 @@ const styles = StyleSheet.create({
         fontSize: 17,
         color: "gray",
         marginTop: 5
-    }
+    },
 })
 export default styles;

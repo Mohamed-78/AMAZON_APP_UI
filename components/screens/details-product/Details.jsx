@@ -13,9 +13,9 @@ import styles from "./detail.style";
 import SlideItem from "../../SlideItem";
 import { icons, images } from "../../../constants";
 import Pagination from "../../Pagination";
-import NormalButtom from "../../buttons/normalButtom/NormalButtom";
 import { useNavigation } from '@react-navigation/native';
 import SmallButtom from "../../buttons/smallButton/SmallButton";
+import RoundedButtom from "../../buttons/roundedButtom/RoundedButtom";
 
 const categories = [
   {
@@ -88,6 +88,7 @@ const Details = () => {
 
   const handlePress = () => {
     navigation.navigate('Checkout');
+    setIsModalVisible(false);
   };
 
   return (
@@ -176,7 +177,7 @@ const Details = () => {
         <TouchableOpacity onPress={() => {navigation.goBack()}}>
           <Image source={icons.leftchevron} />
         </TouchableOpacity>
-        <NormalButtom onPress={handleAddToCart} buttonTitle={"Add to Cart"} />
+        <RoundedButtom onPress={handleAddToCart} buttonTitle={"Add to Cart"} />
         <TouchableOpacity>
           <Image source={icons.addtoplaylist} />
         </TouchableOpacity>

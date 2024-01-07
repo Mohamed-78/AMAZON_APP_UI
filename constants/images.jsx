@@ -12,8 +12,14 @@ import fashion from "../assets/images/fashion.jpg"
 import home from "../assets/images/home.jpg"
 import toys from "../assets/images/toys.jpg"
 import user from "../assets/images/profil.png"
+import blackcard from "../assets/images/blackcard.png"
+import bluedcard from "../assets/images/blued-card.png"
+import goldcard from "../assets/images/gold-card.png"
 
 export default {
+    blackcard,
+    bluedcard,
+    goldcard,
     basket,
     cashmere,
     costume,

@@ -1,29 +1,128 @@
-import React from 'react'
-import { View, Text, Image, TouchableOpacity, FlatList } from 'react-native'
+import React, { useState, useRef } from 'react'
+import { View, Text, Image, TouchableOpacity, FlatList, Animated, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import styles from './checkout.style'
 import { icons, images } from '../../../constants'
+import Checkbox from "expo-checkbox";
+import Pagination from '../../Pagination';
+import NormalButtom from '../../buttons/normalButton/NormalButtom';
+
+const cards = [
+    {
+      id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+      image: images.blackcard,
+    },
+    {
+      id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+      image: images.bluedcard,
+    },
+    {
+      id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f28",
+      image: images.goldcard,
+    },
+  ];
 
 const Checkout = () => {
+  const [isChecked, setChecked] = useState(false);
+  const navigation = useNavigation();
+  const scrollX = useRef(new Animated.Value(0)).current;
+  const handleOnScroll = (event) => {
+    Animated.event(
+      [
+        {
+          nativeEvent: {
+            contentOffset: {
+              x: scrollX,
+            },
+          },
+        },
+      ],
+      {
+        useNativeDriver: false,
+      }
+    )(event);
+  };
   return (
     <>
-    <View style={styles.headerHeight}>
-        <View style={styles.displayPosition}>
-          <TouchableOpacity>
+        <View style={styles.headerHeight}>
+            <View style={styles.displayPosition}>
+            <TouchableOpacity onPress={() => {navigation.goBack()}}>
+                <Image
+                source={icons.back}
+                resizeMode="cover"
+                style={styles.iconSize}
+                />
+            </TouchableOpacity>
+            <Text style={styles.headerTitle}>Check Out</Text>
             <Image
-              source={icons.back}
-              resizeMode="cover"
-              style={styles.iconSize}
+                source={icons.add}
+                resizeMode="cover"
+                style={styles.iconSize}
             />
-          </TouchableOpacity>
-          <Text style={styles.headerTitle}>Check Out</Text>
-          <Image
-              source={icons.add}
-              resizeMode="cover"
-              style={styles.iconSize}
-          />
+            </View>
         </View>
-      </View>
+        <ScrollView>
+            <View style={styles.container}>
+                <View style={styles.containerPadding}>
+                    <View style={styles.deleveryAddressPosition}>
+                        <Image source={icons.gps} />
+                        <Text style={styles.deleveryAddressText}>
+                            Delevery Address*
+                        </Text>
+                    </View>
+                    <View style={styles.deleveryCard}>
+                        <View style={styles.AddressCardPosition}>
+                            <Text>Borovaya 4-15, St. Petersburg, Russia</Text>
+                            <Checkbox value={isChecked} onValueChange={setChecked} />
+                        </View>
+                    </View>
+                    <View style={styles.deleveryCard}>
+                        <View style={styles.AddressCardPosition}>
+                            <Text>Pushkina 34-20, Moscow, Russia</Text>
+                            <Checkbox value={isChecked} onValueChange={setChecked} />
+                        </View>
+                    </View>
+                    <View style={styles.deleveryAddressPosition}>
+                        <Image source={icons.visa} />
+                        <Text style={styles.deleveryAddressText}>
+                            Payment Method*
+                        </Text>
+                    </View>
+                    <View style={styles.visaCardCenter}>
+                        <FlatList
+                            data={cards}
+                            renderItem={({ item }) =>
+                            <Image source={item.image} style={styles.visaCardImage} />}
+                            keyExtractor={(item) => item.id}
+                            pagingEnabled
+                            snapToAlignment="center"
+                            onScroll={handleOnScroll}
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                        />
+                        <Pagination data={cards} scrollX={scrollX} />
+                    </View>
+                </View>
+                <View style={styles.priceContainer}>
+                    <View style={styles.spaceBetween}>
+                        <Text style={styles.deleveryDateText}>Delevery Date:</Text>
+                        <Text style={styles.secondText}>January, 01, 2024</Text>
+                    </View>
+                    <View style={styles.spaceBetween}>
+                        <Text style={styles.deleveryPriceText}>Delevery:</Text>
+                        <Text style={styles.secondText}>$0.00</Text>
+                    </View>
+                    <View style={styles.bottomHorizontalLine}></View>
+                    <View style={styles.spaceBetween}>
+                        <Text style={styles.totalPriceText}>Total Price:</Text>
+                        <Text style={styles.totalPrice}>$11, 722.4</Text>
+                    </View>
+                </View>
+                <View style={styles.payButton}>
+                    <NormalButtom buttonTitle={"Pay"} />
+                </View>
+            </View>
+        </ScrollView>
     </>
   )
 }
