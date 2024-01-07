@@ -39,6 +39,9 @@ const categories = [
 
 const Categories = () => {
   const navigation = useNavigation();
+  const handlePress = () => {
+    navigation.navigate('ProductsCategory');
+  };
   return (
     <>
       <View style={styles.headerHeight}>
@@ -61,7 +64,9 @@ const Categories = () => {
       <View style={styles.categoryCardPosition}>
         {categories.map((category) => (
           <View key={category.id} style={styles.categoryItem}>
-            <TouchableOpacity style={styles.cardContent}>
+            <TouchableOpacity 
+              onPress={handlePress}
+              style={styles.cardContent}>
               <View>
                 <Image
                   source={category.image}

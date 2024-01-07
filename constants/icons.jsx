@@ -21,8 +21,10 @@ import contactless from "../assets/icons/contactless.png"
 import creditcard from "../assets/icons/credit-card.png"
 import minus from "../assets/icons/minus.png"
 import plus from "../assets/icons/plus.png"
+import filter from "../assets/icons/filter.png"
 
 export default {
+    filter,
     minus,
     plus,
     creditcardgold,

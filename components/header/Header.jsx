@@ -1,23 +1,32 @@
-import React from 'react'
-import { View, Text, Image } from 'react-native'
-import { COLORS, icons, images } from '../../constants'
-import styles from './header.style'
-import SearchBar from '../searchbar/SearchBar'
+import React from 'react';
+import { View, Image } from 'react-native';
+import { icons, images } from '../../constants';
+import styles from './header.style';
+import SearchBar from '../searchbar/SearchBar';
 
-const Header = () => {
+const Header = ({ leftElement, rightElement, width, height, iconSize, showIconBackground }) => {
   return (
     <View style={styles.headerHeight}>
-        <View style={styles.displayPosition}>
-            <Image source={images.logo} resizeMode="cover" style={styles.imageSize}/>
-            <View style={styles.iconBackgroundColor}>
-                <Image source={icons.speech} resizeMode="cover" style={styles.iconSize} />
-            </View>
-        </View>
-        <View>
-          <SearchBar />
-        </View>
+      <View style={styles.displayPosition}>
+        {leftElement && <Image source={leftElement} resizeMode="cover" style={{ width, height }} />}
+        {rightElement && (
+          <>
+            {showIconBackground && (
+              <View style={styles.iconBackgroundColor}>
+                <Image source={rightElement} resizeMode="cover" style={{ width: iconSize, height: iconSize }} />
+              </View>
+            )}
+            {!showIconBackground && (
+              <Image source={rightElement} resizeMode="cover" style={{ width: iconSize, height: iconSize }} />
+            )}
+          </>
+        )}
+      </View>
+      <View>
+        <SearchBar />
+      </View>
     </View>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
