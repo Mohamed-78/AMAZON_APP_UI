@@ -5,7 +5,7 @@ import {
   FlatList,
   Animated,
   Image,
-  SafeAreaView,
+  Modal,
   TouchableOpacity,
   ScrollView,
 } from "react-native";
@@ -15,6 +15,7 @@ import { icons, images } from "../../../constants";
 import Pagination from "../../Pagination";
 import NormalButtom from "../../buttons/normalButtom/NormalButtom";
 import { useNavigation } from '@react-navigation/native';
+import SmallButtom from "../../buttons/smallButton/SmallButton";
 
 const categories = [
   {
@@ -69,10 +70,25 @@ const Details = () => {
       }
     )(event);
   };
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleOnViewableItemsChanged = useRef(({ viewableItems }) => {
     setIndex(viewableItems[0].index);
   }).current;
+
+  const handleAddToCart = () => {
+    console.log("Adding to cart");
+    setIsModalVisible(true);
+  };
+  
+  const closeModal = () => {
+    console.log("Closing modal");
+    setIsModalVisible(false);
+  };
+
+  const handlePress = () => {
+    navigation.navigate('Checkout');
+  };
 
   return (
     <>
@@ -160,11 +176,33 @@ const Details = () => {
         <TouchableOpacity onPress={() => {navigation.goBack()}}>
           <Image source={icons.leftchevron} />
         </TouchableOpacity>
-        <NormalButtom buttonTitle={"Add to Cart"} />
+        <NormalButtom onPress={handleAddToCart} buttonTitle={"Add to Cart"} />
         <TouchableOpacity>
           <Image source={icons.addtoplaylist} />
         </TouchableOpacity>
       </View>
+
+      <Modal
+        visible={isModalVisible}
+        animationType="slide"
+        transparent={true}
+        onRequestClose={closeModal}>
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <View style={styles.imgCart}>
+              <Image source={icons.success} />
+            </View>
+            <Text style={styles.modalText}>Success !</Text>
+            <Text style={styles.modalSubText}>
+              Item was successfully added to cart
+            </Text>
+            <SmallButtom onPress={closeModal} buttonTitle={"Continue shopping"} />
+            <TouchableOpacity onPress={handlePress}>
+              <Text style={styles.checkoutText}>Check Out</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </>
   );
 };

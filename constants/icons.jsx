@@ -12,8 +12,11 @@ import rating from "../assets/icons/rating.png"
 import searchsymbol from "../assets/icons/search.png"
 import back from "../assets/icons/back.png"
 import leftchevron from "../assets/icons/left-chevron.png"
+import success from "../assets/icons/success.png"
+import add from "../assets/icons/add.png"
 
 export default {
+    add,
     addtoplaylist,
     camera,
     checklist,
@@ -27,5 +30,6 @@ export default {
     rating,
     searchsymbol,
     back,
-    leftchevron
+    leftchevron,
+    success
 }

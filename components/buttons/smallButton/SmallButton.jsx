@@ -1,8 +1,8 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-import styles from './normalbuttom.style'
+import styles from './smallbutton.style'
 
-const NormalButtom = ({buttonTitle, onPress}) => {
+const SmallButtom = ({buttonTitle, onPress}) => {
   return (
     <View style={styles.container}>
         <TouchableOpacity onPress={onPress}>
@@ -12,4 +12,4 @@ const NormalButtom = ({buttonTitle, onPress}) => {
   )
 }
 
-export default NormalButtom
+export default SmallButtom

@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Categories from './components/screens/categories/Categories';
 import Details from './components/screens/details-product/Details';
+import Checkout from './components/screens/checkout/Checkout';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Layout} />
         <Stack.Screen name="Categories" component={Categories} />
         <Stack.Screen name="Details" component={Details} />
+        <Stack.Screen name="Checkout" component={Checkout} />
       </Stack.Navigator>
     </NavigationContainer>
   );
