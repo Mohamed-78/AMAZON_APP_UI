@@ -158,7 +158,29 @@ const styles = StyleSheet.create({
     marginTop: 15,
     fontSize: 22,
     color: "gray",
-  }
+  },
+  QtePosition:{
+    marginTop: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  viewBottomQte:{
+    flexDirection: "row", 
+    alignItems: "center"
+},
+qteBtn: {
+    width: "60%",
+    height: "60%",
+    tintColor: COLORS.semibold,
+},
+touchQteBtn: {
+    width: 30,
+    height: 30,
+    backgroundColor: COLORS.primary,
+    borderRadius: 15,
+    justifyContent: "center",
+    alignItems: "center",
+},
 });
 
 export default styles;

@@ -13,7 +13,7 @@ import styles from "./detail.style";
 import SlideItem from "../../SlideItem";
 import { icons, images } from "../../../constants";
 import Pagination from "../../Pagination";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 import SmallButtom from "../../buttons/smallButton/SmallButton";
 import RoundedButtom from "../../buttons/roundedButtom/RoundedButtom";
 
@@ -52,6 +52,7 @@ const categories = [
 
 const Details = () => {
   const [index, setIndex] = useState([]);
+  const [quantity, setQuantity] = useState(1);
   const scrollX = useRef(new Animated.Value(0)).current;
   const navigation = useNavigation();
   const handleOnScroll = (event) => {
@@ -80,15 +81,25 @@ const Details = () => {
     console.log("Adding to cart");
     setIsModalVisible(true);
   };
-  
+
   const closeModal = () => {
     console.log("Closing modal");
     setIsModalVisible(false);
   };
 
   const handlePress = () => {
-    navigation.navigate('Checkout');
+    navigation.navigate("Checkout");
     setIsModalVisible(false);
+  };
+
+  const increaseQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const decreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
   };
 
   return (
@@ -117,7 +128,30 @@ const Details = () => {
             <Text style={styles.productText}>KITON</Text>
             <Text style={styles.productCategoryText}>Cashmere Jacket</Text>
           </View>
-          <Text style={styles.price}>$76,565.28</Text>
+          <View style={styles.QtePosition}>
+            <Text style={styles.price}>$76,565.28</Text>
+            <View style={styles.viewBottomQte}>
+              <TouchableOpacity 
+                onPress={increaseQuantity}
+                style={styles.touchQteBtn}>
+                <Image
+                  source={icons.plus}
+                  resizeMode="contain"
+                  style={styles.qteBtn}
+                />
+              </TouchableOpacity>
+              <Text style={{ marginHorizontal: 8 }}>{quantity}</Text>
+              <TouchableOpacity 
+                onPress={decreaseQuantity}
+                style={styles.touchQteBtn}>
+                <Image
+                  source={icons.minus}
+                  resizeMode="contain"
+                  style={styles.qteBtn}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
           <Text style={[styles.description, styles.marginBottom]}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
             soluta impedit, pariatur placeat voluptatem consectetur voluptas
@@ -174,7 +208,11 @@ const Details = () => {
       </ScrollView>
 
       <View style={styles.footer}>
-        <TouchableOpacity onPress={() => {navigation.goBack()}}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.goBack();
+          }}
+        >
           <Image source={icons.leftchevron} />
         </TouchableOpacity>
         <RoundedButtom onPress={handleAddToCart} buttonTitle={"Add to Cart"} />
@@ -187,7 +225,8 @@ const Details = () => {
         visible={isModalVisible}
         animationType="slide"
         transparent={true}
-        onRequestClose={closeModal}>
+        onRequestClose={closeModal}
+      >
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <View style={styles.imgCart}>
@@ -197,7 +236,10 @@ const Details = () => {
             <Text style={styles.modalSubText}>
               Item was successfully added to cart
             </Text>
-            <SmallButtom onPress={closeModal} buttonTitle={"Continue shopping"} />
+            <SmallButtom
+              onPress={closeModal}
+              buttonTitle={"Continue shopping"}
+            />
             <TouchableOpacity onPress={handlePress}>
               <Text style={styles.checkoutText}>Check Out</Text>
             </TouchableOpacity>

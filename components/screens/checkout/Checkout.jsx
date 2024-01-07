@@ -1,11 +1,12 @@
 import React, { useState, useRef } from 'react'
-import { View, Text, Image, TouchableOpacity, FlatList, Animated, ScrollView } from 'react-native'
+import { View, Text, Image, TouchableOpacity, FlatList, Animated, ScrollView, Modal } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import styles from './checkout.style'
 import { icons, images } from '../../../constants'
 import Checkbox from "expo-checkbox";
 import Pagination from '../../Pagination';
 import NormalButtom from '../../buttons/normalButton/NormalButtom';
+import SmallButtom from '../../buttons/smallButton/SmallButton';
 
 const cards = [
     {
@@ -41,6 +42,14 @@ const Checkout = () => {
         useNativeDriver: false,
       }
     )(event);
+  };
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const pay = () => {
+    setIsModalVisible(true);
+  };
+  
+  const closeModal = () => {
+    setIsModalVisible(false);
   };
   return (
     <>
@@ -119,10 +128,31 @@ const Checkout = () => {
                     </View>
                 </View>
                 <View style={styles.payButton}>
-                    <NormalButtom buttonTitle={"Pay"} />
+                    <NormalButtom onPress={pay} buttonTitle={"Pay"} />
                 </View>
             </View>
         </ScrollView>
+        <Modal
+            visible={isModalVisible}
+            animationType="slide"
+            transparent={true}
+            onRequestClose={closeModal}>
+            <View style={styles.modalContainer}>
+                <View style={styles.modalContent}>
+                    <View style={styles.imgCart}>
+                    <Image source={icons.success} />
+                    </View>
+                    <Text style={styles.modalText}>Success !</Text>
+                    <Text style={styles.modalSubText}>
+                        Your order has been successfully paid
+                    </Text>
+                    <SmallButtom onPress={closeModal} buttonTitle={"Continue shopping"} />
+                    <TouchableOpacity>
+                    <Text style={styles.checkoutText}>Go to Orders</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+      </Modal>
     </>
   )
 }
