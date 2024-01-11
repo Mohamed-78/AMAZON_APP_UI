@@ -1,11 +1,16 @@
 import React from 'react'
 import { TouchableOpacity, View, Image, Text } from 'react-native'
 import styles from './cardslide.style'
+import { useNavigation } from '@react-navigation/native';
 
 const CardSlide = ({item}) => {
+  const navigation = useNavigation();
+  const handlePress = () => {
+    navigation.navigate('ProductsCategory');
+  };
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.cardContent}>
+      <TouchableOpacity onPress={handlePress} style={styles.cardContent}>
         <View style={styles.imageContent}>
           <Image source={item.image} 
           resizeMode="cover" 
