@@ -56,7 +56,7 @@ const Details = () => {
   const scrollX = useRef(new Animated.Value(0)).current;
   const navigation = useNavigation();
   const cartScreen = () =>{
-    navigation.navigate('Cart');
+    navigation.navigate('Profile');
   }
   const handleOnScroll = (event) => {
     Animated.event(
