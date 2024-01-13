@@ -48,13 +48,41 @@ const styles = StyleSheet.create({
     color: COLORS.medium
   },
   boxElementPosition:{
+    padding: 10,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
   },
   boxText:{
-    marginLeft: 15
-  }
+    marginLeft: 15,
+    fontWeight: "bold",
+    fontSize: 15
+  },
+  menuBox:{
+    width: "100%",
+    backgroundColor: "#fff",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    shadowColor: "rgba(168, 168, 168, 1)",
+    elevation: 10,
+    borderRadius: 10
+  },
+  secondHorizontalLine: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#CCD7E1",
+    alignSelf: "center",
+    width: "90%",
+    height: 0.4,
+    },
+    p7:{
+        padding: 7,
+    },
+    p10:{
+        padding: 10,
+    }
 });
 
 export default styles;

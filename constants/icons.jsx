@@ -22,8 +22,26 @@ import creditcard from "../assets/icons/credit-card.png"
 import minus from "../assets/icons/minus.png"
 import plus from "../assets/icons/plus.png"
 import filter from "../assets/icons/filter.png"
+import wallet from "../assets/icons/wallet.png"
+import tasklist from "../assets/icons/task-list.png"
+import shoppingbag from "../assets/icons/shopping-bag.png"
+import settings from "../assets/icons/settings.png"
+import placeholder from "../assets/icons/placeholder.png"
+import people from "../assets/icons/people.png"
+import history from "../assets/icons/history.png"
+import chat from "../assets/icons/chat.png"
+import bell from "../assets/icons/bell.png"
 
 export default {
+    bell,
+    chat,
+    history,
+    people,
+    placeholder,
+    settings,
+    shoppingbag,
+    tasklist,
+    wallet,
     filter,
     minus,
     plus,
