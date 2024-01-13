@@ -55,6 +55,9 @@ const Details = () => {
   const [quantity, setQuantity] = useState(1);
   const scrollX = useRef(new Animated.Value(0)).current;
   const navigation = useNavigation();
+  const cartScreen = () =>{
+    navigation.navigate('Cart');
+  }
   const handleOnScroll = (event) => {
     Animated.event(
       [
@@ -216,7 +219,7 @@ const Details = () => {
           <Image source={icons.leftchevron} />
         </TouchableOpacity>
         <RoundedButtom onPress={handleAddToCart} buttonTitle={"Add to Cart"} />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={cartScreen}>
           <Image source={icons.addtoplaylist} />
         </TouchableOpacity>
       </View>
