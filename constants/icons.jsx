@@ -31,8 +31,16 @@ import people from "../assets/icons/people.png"
 import history from "../assets/icons/history.png"
 import chat from "../assets/icons/chat.png"
 import bell from "../assets/icons/bell.png"
+import homeWhite from "../assets/icons/homeWhite.png"
+import listWhite from "../assets/icons/listWhite.png"
+import shoppingWhite from "../assets/icons/shoppingWhite.png"
+import userWhite from "../assets/icons/userWhite.png"
 
 export default {
+    userWhite,
+    shoppingWhite,
+    listWhite,
+    homeWhite,
     bell,
     chat,
     history,

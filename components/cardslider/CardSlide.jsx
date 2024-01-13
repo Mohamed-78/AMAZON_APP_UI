@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 const CardSlide = ({item}) => {
   const navigation = useNavigation();
   const handlePress = () => {
-    navigation.navigate('ProductsCategory');
+    navigation.navigate('Products');
   };
   return (
     <View style={styles.container}>

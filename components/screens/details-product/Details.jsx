@@ -219,7 +219,7 @@ const Details = () => {
           <Image source={icons.leftchevron} />
         </TouchableOpacity>
         <RoundedButtom onPress={handleAddToCart} buttonTitle={"Add to Cart"} />
-        <TouchableOpacity onPress={cartScreen}>
+        <TouchableOpacity>
           <Image source={icons.addtoplaylist} />
         </TouchableOpacity>
       </View>

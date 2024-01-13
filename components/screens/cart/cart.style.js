@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   headerHeight: {
-    height: "17%",
+    height: "17.5%",
     backgroundColor: COLORS.bold,
   },
   displayPosition: {

@@ -40,7 +40,7 @@ const categories = [
 const Categories = () => {
   const navigation = useNavigation();
   const handlePress = () => {
-    navigation.navigate('ProductsCategory');
+    navigation.navigate('Products');
   };
   return (
     <>
